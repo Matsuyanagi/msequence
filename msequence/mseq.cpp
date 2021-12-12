@@ -39,13 +39,13 @@ int main(int argc, char *argv[])
 	uint64_t mnumber = 1;
 	uint64_t mseq_bit_length = 1LL << bit_size;
 
-	for (uint64_t i = 0; i < mseq_bit_length; i++)
+	for (uint64_t i = 0; i < mseq_bit_length-1; i++)
 	{
 		putc( (mnumber & 1) + '0', stdout );
 		mnumber = mseq( mnumber, bit_size, lfsr_param.taps );
 	}
 
-	for (size_t i = 0; i < bit_size-1-1; i++)
+	for (size_t i = 0; i < bit_size-1; i++)
 	{
 		putc( (mnumber & 1) + '0', stdout );
 		mnumber >>= 1;
