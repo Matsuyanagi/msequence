@@ -29,6 +29,11 @@ int main(int argc, char *argv[])
 	{
 		bit_size = atoi(argv[1]);
 	}
+	uint64_t mnumber = 1;
+	if ( argc > 2 )
+	{
+		mnumber = atoll(argv[2]);
+	}
 	
 	LfsrParams lfsr_param = find_lfsr_param( bit_size );
 	if (lfsr_param.bit_size == 0)
@@ -36,7 +41,6 @@ int main(int argc, char *argv[])
 		printf("Error: LFSR Param not found\n");
 		return -1;
 	}
-	uint64_t mnumber = 1;
 	uint64_t mseq_bit_length = 1LL << bit_size;
 
 	for (uint64_t i = 0; i < mseq_bit_length-1; i++)
