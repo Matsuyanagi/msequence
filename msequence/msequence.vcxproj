@@ -120,6 +120,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ForceSymbolReferences>%(ForceSymbolReferences)</ForceSymbolReferences>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -140,10 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lfsr.h" />
+    <ClInclude Include="UsingBitRecorder.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="lfsr.cpp" />
     <ClCompile Include="mseq.cpp" />
+    <ClCompile Include="UsingBitRecorder.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
